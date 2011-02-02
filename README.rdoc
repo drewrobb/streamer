@@ -1,0 +1,36 @@
+= steamer
+
+Allow rails 3 controllers to return streaming records. Support returning a valid JSON array, or raw file attachment in user specified format.
+
+==Usage
+In your controller:
+   include Streamer
+
+
+
+==Raw file or JSON array
+    respond_to do |format|
+      format.text do
+        stream_to('users.txt') do |output|
+          User.find_each do |u|
+            output.write "#{u.name} #{u.email}\n"
+          end
+        end
+      end
+
+      format.json do
+        stream_json do |output|
+          User.find_each do |u|
+	    # will be rendered as an object in a json array container
+            send_record(u)
+          end
+        end
+      end
+    end
+
+
+Inspiration from  patshaughnessy's[https://github.com/patshaughnessy/] blog[http://patshaughnessy.net/2010/10/11/activerecord-with-large-result-sets-part-2-streaming-data]. This is useful for returning large record sets without an initial server delay.
+
+== Copyright
+
+Copyright (c) 2011 Drew Robb. released under the MIT license
