@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = %q{Stream data to user.}
   s.email = %q{drewrobb@gmail.com}
   s.extra_rdoc_files = ["LICENSE", "README.rdoc", "lib/streamer.rb"]
-  s.files = ["LICENSE", "README.rdoc", "Rakefile", "lib/streamer.rb", "Manifest", "streamer.gemspec"]
+  s.files = ["LICENSE", "README.rdoc", "Rakefile", "lib/streamer.rb", "streamer.gemspec"]
   s.homepage = %q{http://github.com/drewrobb/streamer}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Streamer", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
