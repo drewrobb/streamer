@@ -1,4 +1,4 @@
-= steamer
+= streamer
 
 Allow rails 3 controllers to return streaming records. Support returning a valid JSON array, or raw file attachment in user specified format.
 
