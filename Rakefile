@@ -1,15 +1,11 @@
-# Rakefile
-require 'rubygems'
-require 'rake'
-require 'echoe'
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
-Echoe.new('streamer', '0.1.0') do |p|
-  p.description    = "Stream data to user."
-  p.url            = "http://github.com/drewrobb/streamer"
-  p.author         = "Drew Robb"
-  p.email          = "drewrobb@gmail.com"
-  p.ignore_pattern = ["tmp/*", "script/*"]
-  p.development_dependencies = []
+require 'rspec/core'
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = FileList['spec/**/*_spec.rb']
 end
 
-Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext }
+task :default => :spec
