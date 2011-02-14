@@ -1,10 +1,9 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "code_buddy/version"
 
 Gem::Specification.new do |s|
   s.name = %q{streamer}
-  s.version = CodeBuddy::VERSION
+  s.version = '0.11'
   s.platform    = Gem::Platform::RUBY
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Drew Robb"]
