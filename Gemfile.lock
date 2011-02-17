@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    streamer (0.0.8)
+    streamer (0.11)
       rails (~> 3.0.0)
 
 GEM
